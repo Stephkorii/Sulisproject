@@ -1,0 +1,170 @@
+:root {
+    --primary-color: #e85a5a;
+    --hover-color: #e85a5a;
+    --bg-transparent: rgba(3, 0, 10, 0.397);
+    --shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background: url('hotel-booking.jpg') no-repeat center fixed;
+    background-size: cover;
+}
+
+/* Fejléc és navigáció */
+header {
+    background-color: var(--bg-transparent);
+    box-shadow: var(--shadow);
+    position: static;
+    width: 100%;
+    z-index: 999;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav a {
+    display: block;
+    padding: 20px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--primary-color);
+}
+
+/* Fő tartalom */
+main {
+    margin-top: 80px;
+    padding: 40px;
+}
+
+section {
+    background-color: var(--bg-transparent);
+    padding: 40px;
+    margin-bottom: 40px;
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+}
+
+h1, h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+/* Űrlap elemek */
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.button, button[type="submit"] {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover, button[type="submit"]:hover {
+    background-color: var(--hover-color);
+}
+
+/* Szobák grid */
+.room-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.room-card {
+    background-color: var(--bg-transparent);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.room-card:hover {
+    transform: scale(1.03);
+}
+
+.room-image {
+    height: 250px;
+}
+
+.room-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.room-details {
+    padding: 20px;
+}
+
+/* Szolgáltatások */
+#services ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    list-style: none;
+}
+
+#services li {
+    background-color: var(--bg-transparent);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#services img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+/* Reszponzív design */
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    main {
+        padding: 20px;
+    }
+    
+    .room-grid {
+        grid-template-columns: 1fr;
+    }
+}
